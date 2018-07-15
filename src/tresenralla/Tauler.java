@@ -23,6 +23,9 @@ public class Tauler {
         inicialitza();
     }
     
+    /**
+     * Instancia tots els caràcters de la matriu tauler amb un càrcater en blanc. 
+     */
     private void inicialitza(){
         for(int i = 0; i < tauler.length; i++){
             for(int j = 0; j < tauler[i].length; j++){
@@ -31,6 +34,13 @@ public class Tauler {
         }
     }
     
+    /**
+     * Insereix c a la fila fila i columna columna.
+     * @param fila Fila del tauler a inserir
+     * @param columna Columna del tauler a inserir
+     * @param c Caràcters que s'inserirà
+     * @throws Exception En cas que s'intenti accedir a una posició de la matriu que no existeix. 
+     */
     public void inserta(int fila, int columna, char c) throws Exception{
         if(fila < 0 || fila >= tauler.length){
             throw new Exception("la Fila a inserir és incorrecte");
@@ -43,7 +53,11 @@ public class Tauler {
     }
     
     
-    
+    /**
+     * Verifica que a la fila número f tots els caràcters siguin iguals (diferent de un espai.)
+     * @param f fila que s'ha de vigilar
+     * @return cert si es compleix. falç altrament.
+     */
     public boolean mateixCaracterFila(int f){
         boolean mateixCaracter = true;
         int i = 0;
@@ -54,6 +68,11 @@ public class Tauler {
         return mateixCaracter;
     }
     
+    /**
+     * Verifica que a la columna número c tots els caràcters siguin iguals (diferent de un espai.)
+     * @param c columna que s'ha de vigilar
+     * @return cert si es compleix. falç altrament.
+     */
     public boolean mateixCaracterColumna(int c){
         boolean mateixCaracter = true;
         int i = 0;
@@ -64,6 +83,10 @@ public class Tauler {
         return mateixCaracter;
     }
     
+    /**
+     * Verifica que a tota la diagonal de la matriu hi ha el mateix caràter. (la diagonal inversa també)
+     * @return cert si es compleix, falç altrament.
+     */
     public boolean mateixCaracterDiagonals(){
         boolean mateixCaracterEsqDre = true;
         boolean mateixCaracterDreEsq = true;
